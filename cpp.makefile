@@ -32,3 +32,7 @@ target: $(addprefix $(BUILD_DIR)/, $(SOURCE_FILES:.cpp=.o))
 build/%.o: $(addprefix $(SOURCE_DIR)/, %.cpp)
 	@mkdir -p $(BUILD_DIR)
 	$(CPP_COMPILER) $(CPP_COMPILE_FLAGS) -c -o $@ $<
+
+clean:
+	@rm -f $(addprefix $(BUILD_DIR)/, $(SOURCE_FILES:.cpp=.o))
+	@rm -f target
